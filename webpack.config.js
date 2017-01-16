@@ -3,8 +3,20 @@ const validator = require('webpack-validator')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 
+/* Directory */
+const directory = path.resolve(__dirname, 'src/')
+
 module.exports = validator({
-    entry: __dirname + '/src/main.js',
+    entry: __dirname + '/src/components/main.js',
+
+    resolve: {
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            generalComponent: path.resolve(__dirname, 'src', 'components'),
+            storeComponent: path.resolve(__dirname, 'src', 'store'),
+            styleComponent: path.resolve(__dirname, 'src', 'style')
+        }
+    },
 
     output: {
         path: path.resolve(__dirname),

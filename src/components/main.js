@@ -1,6 +1,6 @@
-import store from './store/store'
-import Todo from './todo'
-import './style.scss'
+import store from 'storeComponent/store'
+import Todo from 'generalComponent/todo'
+import 'styleComponent/style.scss'
 
 const Main = () =>
     <div className='container'>

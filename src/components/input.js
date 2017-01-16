@@ -1,4 +1,4 @@
-import store from './store/store'
+import store from 'storeComponent/store'
 
 const handleClick = (evt) => {
     evt.preventDefault()
