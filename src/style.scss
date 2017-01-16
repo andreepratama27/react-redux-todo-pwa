@@ -1,0 +1,93 @@
+@import './_variable';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+    background-color: $color-dark;
+    font-size: 14px;
+    font-family: 'Open sans', sans-serif;
+}
+
+.title {
+    margin: 2rem 0;
+    color: lighten(#333, 50%);
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.inputText {
+    input {
+        background-color: lighten(#333, 5%);
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+        color: lighten($color-dark, 50%);
+        padding: 2.5rem 1.5rem !important;
+
+        &:focus {
+            box-shadow: none;
+            border-color: gold;
+        }
+    }
+}
+
+.list-vertical {
+    height: 30rem;
+    overflow-y: scroll;
+}
+
+ul.list-group {
+    margin: 0 0 2rem 0;
+    li {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid lighten($color-dark, 10%);
+        padding-left: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        box-shadow: none;
+        color: lighten($color-dark, 50%);
+        border-radius: 0 !important;
+        transition: 0.3s ease all;
+        font-size: $big-font;
+
+        .icon-delete {
+            display: none;
+            i {
+                &:first-child {
+                    margin-right: 2rem;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: gold !important;
+            color: $color-dark;
+            padding-left: 1rem;
+            font-weight: bold;
+
+            .icon-delete {
+                font-size: $large-font;
+                font-weight: normal;
+                display: block;
+            }
+        }
+    }
+}
+
+.list-horizontal {
+    margin-top: 2rem;
+    text-align: center;
+
+    li {
+        font-size: 2.4rem;
+        color: gold;
+
+        &:active {
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+    }
+}
