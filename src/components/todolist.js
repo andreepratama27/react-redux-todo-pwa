@@ -16,7 +16,9 @@ const Todolist = ({data}) =>
         <div className='list-vertical'>
             <ul className='list-group'>
                 {
-                    data.map((v,i) =>
+                    data.filter((v) =>
+                        v.done === false
+                    ).map((v, i) =>
                         <li className='list-group-item'
                             key={i}>
                             {v.text}
@@ -27,7 +29,7 @@ const Todolist = ({data}) =>
                                         deleteData(i)
                                     }}
                                 />
-                                <i className='fa fa-check'/>
+                                <i className='fa fa-check' />
                             </span>
                         </li>
                     )
