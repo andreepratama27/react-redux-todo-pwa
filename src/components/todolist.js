@@ -3,6 +3,9 @@ import store from 'storeComponent/store'
 const deleteData = (i) =>
     store.dispatch({type: 'DEL', payload: i})
 
+const doneData = (i) =>
+    store.dispatch({type: 'DONE', payload: i})
+
 const Todolist = ({data}) =>
     <div>
         <div className='list-horizontal'>
@@ -29,7 +32,11 @@ const Todolist = ({data}) =>
                                         deleteData(i)
                                     }}
                                 />
-                                <i className='fa fa-check' />
+                                <i className='fa fa-check'
+                                    onClick={(evt) => {
+                                        doneData(i)
+                                    }}
+                                />
                             </span>
                         </li>
                     )

@@ -27,6 +27,11 @@ const reducer = (state=initState, action) => {
             break
         }
 
+        case 'DONE': {
+            console.log(action.payload)
+            break
+        }
+
         default: {
             return state
         }
