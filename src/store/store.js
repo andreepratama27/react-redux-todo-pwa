@@ -9,7 +9,6 @@ const initState = [
 ]
 
 const initial = JSON.parse(localStorage.getItem('todo'))
-console.log(initial)
 
 const reducer = (state=initial, action) => {
     switch (action.type) {
