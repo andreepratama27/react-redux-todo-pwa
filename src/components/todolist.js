@@ -8,6 +8,7 @@ const doneData = (i) =>
 
 const Todolist = ({data}) =>
     <div>
+        {/*
         <div className='list-horizontal'>
             <ul className='list-inline'>
                 <li>All</li>
@@ -15,6 +16,7 @@ const Todolist = ({data}) =>
                 <li>Done</li>
             </ul>
         </div>
+        */}
 
         <div className='list-vertical'>
             <ul className='list-group'>
