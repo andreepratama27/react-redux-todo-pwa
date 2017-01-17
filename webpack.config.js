@@ -1,7 +1,13 @@
 const webpack = require('webpack')
+const path = require('path')
 const validator = require('webpack-validator')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+    template: __dirname + '/src/index.html',
+    filename: 'index.html',
+    inject: 'body'
+})
 
 /* Directory */
 const directory = path.resolve(__dirname, 'src/')
@@ -19,7 +25,7 @@ module.exports = validator({
     },
 
     output: {
-        path: path.resolve(__dirname),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
 
@@ -54,6 +60,7 @@ module.exports = validator({
             'React': 'react',
             'ReactDOM': 'react-dom'
         }),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        HtmlWebpackPluginConfig
     ]
 })
