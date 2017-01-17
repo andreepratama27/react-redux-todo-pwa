@@ -8,7 +8,10 @@ const initState = [
     }
 ]
 
-const reducer = (state=initState, action) => {
+const initial = JSON.parse(localStorage.getItem('todo'))
+console.log(initial)
+
+const reducer = (state=initial, action) => {
     switch (action.type) {
         case 'ADD': {
             const newState = state
@@ -16,6 +19,7 @@ const reducer = (state=initState, action) => {
                 text: action.payload,
                 done: false
             })
+			localStorage.setItem('todo', JSON.stringify(newState))
             return newState
             break
         }
@@ -23,6 +27,7 @@ const reducer = (state=initState, action) => {
         case 'DEL': {
             const nowState = state
             nowState.splice(action.payload, 1)
+			localStorage.setItem('todo', JSON.stringify(nowState))
             return nowState
             break
         }
