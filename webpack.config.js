@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const validator = require('webpack-validator')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+/* Html Webpack Config */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: __dirname + '/src/index.html',
