@@ -8,16 +8,6 @@ const doneData = (i) =>
 
 const Todolist = ({data}) =>
     <div>
-        {/*
-        <div className='list-horizontal'>
-            <ul className='list-inline'>
-                <li>All</li>
-                <li>/</li>
-                <li>Done</li>
-            </ul>
-        </div>
-        */}
-
         <div className='list-vertical'>
             <ul className='list-group'>
                 {
@@ -34,11 +24,7 @@ const Todolist = ({data}) =>
                                         deleteData(i)
                                     }}
                                 />
-                                <i className='fa fa-check'
-                                    onClick={(evt) => {
-                                        doneData(i)
-                                    }}
-                                />
+                                <i className='fa fa-check'/>
                             </span>
                         </li>
                     )

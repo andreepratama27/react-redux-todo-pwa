@@ -11,19 +11,21 @@ const initState = [
 const reducer = (state=[], action) => {
     switch (action.type) {
         case 'ADD': {
-            const newState = state
-            newState.push({
-                text: action.payload,
-                done: false
-            })
-            return newState
+            return [
+                ...state,
+                {
+                    text: action.payload,
+                    done: false
+                }
+            ]
             break
         }
 
         case 'DEL': {
-            const nowState = state
-            nowState.splice(action.payload, 1)
-            return nowState
+            return [
+                ...state.slice(0, action.payload),
+                ...state.slice(action.payload + 1)
+            ]
             break
         }
 
