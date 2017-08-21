@@ -3,26 +3,20 @@ const path = require('path')
 const validator = require('webpack-validator')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-/* Html Webpack Config */
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: __dirname + '/src/index.html',
-    filename: 'index.html',
-    inject: 'body'
-})
-
 /* Directory */
 const directory = path.resolve(__dirname, 'src/')
 
 module.exports = validator({
-    entry: __dirname + '/src/components/main.js',
+    entry: path.resolve(__dirname, 'index.js'),
 
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
-            generalComponent: path.resolve(__dirname, 'src', 'components'),
-            storeComponent: path.resolve(__dirname, 'src', 'store'),
-            styleComponent: path.resolve(__dirname, 'src', 'style')
+            Actions: path.resolve(__dirname, 'actions/'),
+            Component: path.resolve(__dirname, 'components/'),
+            Container: path.resolve(__dirname, 'containers/'),
+            Reducer: path.resolve(__dirname, 'reducers/'),
+            Style: path.resolve(__dirname, 'src', 'style')
         }
     },
 
@@ -62,7 +56,6 @@ module.exports = validator({
             'React': 'react',
             'ReactDOM': 'react-dom'
         }),
-        new ExtractTextPlugin('style.css'),
-        HtmlWebpackPluginConfig
+        new ExtractTextPlugin('style.css')
     ]
 })
