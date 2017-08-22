@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import Todo from 'Container/Todo'
 
 class App extends Component {
   constructor(props) {
@@ -6,9 +7,10 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div>
-        Hai from components
+        <Todo {...this.props} />
       </div>
     )
   }
