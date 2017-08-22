@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import App from 'Component/App'
+import { addTodo } from 'Actions/'
 
 const mapStateToProps = state => ({
   todos: state.todos
@@ -7,7 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addTodo(data) {
-    console.log(data)
+    dispatch(addTodo(data))
   }
 })
 

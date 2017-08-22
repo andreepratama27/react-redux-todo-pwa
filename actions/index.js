@@ -1,4 +1,4 @@
-export const addTodo = () => ({
+export const addTodo = data => ({
   type: 'ADD',
-  task
+  task: data.task
 })

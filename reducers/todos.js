@@ -1,9 +1,8 @@
-const initialState = [
-  { task: 'andre pratama', done: false },
-  { task: 'lionel messi', done: false }
-]
+window.id = 0
 
-const reducers = (state=initialState, action) => {
+const reducers = (state=[], action) => {
+
+  const self = this
 
   switch(action.type) {
 
@@ -11,9 +10,17 @@ const reducers = (state=initialState, action) => {
       return [
         ...state,
         {
+          id: window.id++,
           task: action.task,
           done: false
         }
+      ]
+    }
+
+    case 'DEL': {
+      return [
+        ...state.slice(0, action.id),
+        ...state.slice(action.id + 1)
       ]
     }
 
