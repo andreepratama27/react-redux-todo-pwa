@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import App from 'Component/App'
-import { addTodo } from 'Actions/'
+import { addTodo, delTask } from 'Actions/'
 
 const mapStateToProps = state => ({
   todos: state.todos
@@ -9,6 +9,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addTodo(data) {
     dispatch(addTodo(data))
+  },
+
+  delTask(data) {
+    dispatch(delTask(data))
   }
 })
 

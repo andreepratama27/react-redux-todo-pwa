@@ -1,8 +1,14 @@
-window.id = 0
-
-const reducers = (state=[], action) => {
-
-  const self = this
+const initialState = [
+  {
+    task: 'cuci piring',
+    done: false
+  },
+  {
+    task: 'wisuda',
+    done: false
+  }
+]
+const reducers = (state=initialState, action) => {
 
   switch(action.type) {
 
@@ -10,7 +16,6 @@ const reducers = (state=[], action) => {
       return [
         ...state,
         {
-          id: window.id++,
           task: action.task,
           done: false
         }

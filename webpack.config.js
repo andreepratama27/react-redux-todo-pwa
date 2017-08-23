@@ -16,7 +16,7 @@ module.exports = validator({
             Component: path.resolve(__dirname, 'components/'),
             Container: path.resolve(__dirname, 'containers/'),
             Reducer: path.resolve(__dirname, 'reducers/'),
-            Style: path.resolve(__dirname, 'src', 'style')
+            Style: path.resolve(__dirname, 'style')
         }
     },
 

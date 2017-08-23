@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Todo from 'Container/Todo'
+import style from 'Style/style.scss'
 
 class App extends Component {
   constructor(props) {
@@ -9,8 +10,12 @@ class App extends Component {
   render() {
 
     return (
-      <div>
-        <Todo {...this.props} />
+      <div className='container'>
+        <div className='row'>
+          <div className='todo-wrapper'>
+            <Todo {...this.props} />
+          </div>
+        </div>
       </div>
     )
   }

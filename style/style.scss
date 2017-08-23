@@ -80,17 +80,64 @@ ul.list-group {
     }
 }
 
+.input-box {
+    background-color: lighten($color-dark, 10%);
+    height: 5rem;
+    border: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    color: darken(#fff, 40%);
+    font-size: 2.4rem;
+
+    &::selection {
+        background-color: lighten($color-dark, 30%);
+    }
+}
+
+.divider {
+    margin: 2.2rem 0;
+    border-bottom: 2px dashed darken($color-dark, 4%);
+}
+
 .list-horizontal {
+    list-style-type: none;
     margin-top: 2rem;
-    text-align: center;
+    margin: 0 0 2.2rem 0;
+    padding: 0;
+    max-height: 40rem;
+    overflow: scroll;
 
     li {
-        font-size: 2.4rem;
-        color: gold;
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+        color: #555;
+        padding: 1.2rem 2rem;
+        background-color: darken($color-dark, 10%);
+        border-bottom: 1px solid lighten($color-dark, 1%);
 
-        &:active {
-            font-weight: bolder;
-            text-decoration: underline;
+        &:first-child {
+            border-top-left-radius: .4rem;
+            border-top-right-radius: .4rem;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            border-bottom-left-radius: .4rem;
+            border-bottom-right-radius: .4rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken($color-dark, 12%);
         }
     }
+}
+
+.wrapper {
+    padding: 1.2rem 1.8rem;
+}
+
+.todo-wrapper {
+    margin: 2rem 0;
 }

@@ -1,8 +1,15 @@
 const List = ({ data, onClick }) => (
-  <ul>
+  <ul className="list-horizontal">
   {data.map((v,key) => (
-    <li key={key} onClick={ onClick }>
-      {v.task} - {v.id}
+    <li key={key}>
+      <div className='text'>
+        {v.task}
+      </div>
+      <div className='option'>
+        <div className='delete' onClick={ (e) => onClick(key) }>
+          <i className='fa fa-trash' />
+        </div>
+      </div>
     </li>
   ))}
   </ul>
