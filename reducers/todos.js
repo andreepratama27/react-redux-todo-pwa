@@ -1,14 +1,5 @@
-const initialState = [
-  {
-    task: 'cuci piring',
-    done: false
-  },
-  {
-    task: 'wisuda',
-    done: false
-  }
-]
-const reducers = (state=initialState, action) => {
+let nextId = 0
+const reducers = (state=[], action) => {
 
   switch(action.type) {
 
@@ -16,6 +7,7 @@ const reducers = (state=initialState, action) => {
       return [
         ...state,
         {
+          id: nextId++,
           task: action.task,
           done: false
         }

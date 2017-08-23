@@ -1,7 +1,8 @@
+import Filtering from 'Component/Filtering'
 import BoxInput from 'Component/BoxInput'
 import List from 'Component/List'
 
-const Todo = ({ todos, addTodo, delTask }) => {
+const Todo = ({ todos, addTodo, delTask, setDone }) => {
 
   const handleClick = (e) => {
     if (e.keyCode === 13) {
@@ -12,8 +13,7 @@ const Todo = ({ todos, addTodo, delTask }) => {
   }
 
   const deleteData = (id) => {
-    const data = { id }
-    delTask(data)
+    delTask({ id })
   }
 
   return (
@@ -22,6 +22,8 @@ const Todo = ({ todos, addTodo, delTask }) => {
       <BoxInput handleClick={ handleClick } />
 
       <div className='divider'></div>
+
+      <Filtering />
 
       <List data={todos} onClick={ deleteData } />
 

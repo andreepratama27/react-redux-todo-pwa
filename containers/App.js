@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
 import App from 'Component/App'
-import { addTodo, delTask } from 'Actions/'
+import { addTodo, delTask, setDone } from 'Actions/'
 
 const mapStateToProps = state => ({
-  todos: state.todos
+  todos: state.todos.filter(v  => {
+    return v.done === false
+  })
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -13,6 +15,10 @@ const mapDispatchToProps = dispatch => ({
 
   delTask(data) {
     dispatch(delTask(data))
+  },
+
+  setDone(data) {
+    dispatch(setDone(data))
   }
 })
 

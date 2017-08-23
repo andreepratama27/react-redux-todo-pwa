@@ -3,9 +3,12 @@ export const addTodo = data => ({
   task: data.task
 })
 
-export const delTask = data => {
-  return {
+export const setDone = data => ({
+  type: 'DONE',
+  id: data.id
+})
+
+export const delTask = data => ({
     type: 'DEL',
     id: data.id
-  }
-}
+})
