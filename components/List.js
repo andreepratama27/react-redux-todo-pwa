@@ -6,9 +6,6 @@ const List = ({ data, onClick }) => (
         {v.task} - {v.id}
       </div>
       <div className='option'>
-        {/*<div className='done' onClick={ (e) => setDone(key) }>
-          <i className='fa fa-check' />
-        </div> */}
         <div className='delete' onClick={ (e) => onClick(key) }>
           <i className='fa fa-trash' />
         </div>

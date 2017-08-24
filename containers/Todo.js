@@ -1,4 +1,3 @@
-import Filtering from 'Component/Filtering'
 import BoxInput from 'Component/BoxInput'
 import List from 'Component/List'
 
@@ -22,8 +21,6 @@ const Todo = ({ todos, addTodo, delTask, setDone }) => {
       <BoxInput handleClick={ handleClick } />
 
       <div className='divider'></div>
-
-      <Filtering />
 
       <List data={todos} onClick={ deleteData } />
 
