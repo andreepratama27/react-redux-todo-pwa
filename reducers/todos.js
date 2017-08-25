@@ -1,4 +1,5 @@
 let nextId = 0
+
 const reducers = (state=[], action) => {
 
   switch(action.type) {
@@ -12,6 +13,14 @@ const reducers = (state=[], action) => {
           done: false
         }
       ]
+    }
+
+    case 'DONE': {
+      return state.map(v =>
+        (v.id === action.id)
+          ? {...v, done: !v.done}
+          : v
+      )
     }
 
     case 'DEL': {

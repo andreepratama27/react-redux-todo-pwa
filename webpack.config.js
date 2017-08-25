@@ -7,7 +7,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const directory = path.resolve(__dirname, 'src/')
 
 module.exports = validator({
-    entry: path.resolve(__dirname, 'index.js'),
+
+    entry: [
+        'babel-polyfill',
+        path.resolve(__dirname, 'index.js')
+    ],
 
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -37,7 +41,8 @@ module.exports = validator({
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
-                    presets: ['react', 'es2015']
+                    plugins: ['transform-runtime'],
+                    presets: ['react', 'es2015', 'stage-0']
                 }
             },
             {

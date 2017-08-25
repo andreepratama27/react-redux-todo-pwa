@@ -1,7 +1,9 @@
 import BoxInput from 'Component/BoxInput'
 import List from 'Component/List'
 
-const Todo = ({ todos, addTodo, delTask, setDone }) => {
+const Todo = (props) => {
+
+  const { todos, addTodo, setDone, delTask } = props
 
   const handleClick = (e) => {
     if (e.keyCode === 13) {
@@ -11,7 +13,11 @@ const Todo = ({ todos, addTodo, delTask, setDone }) => {
     }
   }
 
-  const deleteData = (id) => {
+  const taskDone = id => {
+    setDone({ id })
+  }
+
+  const deleteData = id => {
     delTask({ id })
   }
 
@@ -22,8 +28,10 @@ const Todo = ({ todos, addTodo, delTask, setDone }) => {
 
       <div className='divider'></div>
 
-      <List data={todos} onClick={ deleteData } />
-
+      <List
+        data={todos}
+        deleteData={ deleteData }
+        taskDone={ taskDone } />
     </div>
   )
 }

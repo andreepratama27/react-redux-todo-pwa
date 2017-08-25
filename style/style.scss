@@ -118,6 +118,10 @@ ul.list-group {
         margin-bottom: .8rem;
         border-radius: .4rem;
 
+        .task-done {
+            text-decoration: line-through;
+        }
+
         &:hover {
             cursor: pointer;
             background-color: darken($color-dark, 12%);
