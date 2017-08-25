@@ -5,6 +5,9 @@ const reducers = (state=[], action) => {
   switch(action.type) {
 
     case 'ADD': {
+
+      localStorage.setItem('data', )
+
       return [
         ...state,
         {
@@ -13,6 +16,7 @@ const reducers = (state=[], action) => {
           done: false
         }
       ]
+
     }
 
     case 'DONE': {

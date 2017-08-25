@@ -19,6 +19,7 @@ module.exports = validator({
             Actions: path.resolve(__dirname, 'actions/'),
             Component: path.resolve(__dirname, 'components/'),
             Container: path.resolve(__dirname, 'containers/'),
+            Lib: path.resolve(__dirname, 'lib/'),
             Reducer: path.resolve(__dirname, 'reducers/'),
             Style: path.resolve(__dirname, 'style')
         }

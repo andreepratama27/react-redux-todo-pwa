@@ -7,8 +7,11 @@ const Todo = (props) => {
 
   const handleClick = (e) => {
     if (e.keyCode === 13) {
+
       const data = { task: e.target.value }
+
       addTodo(data)
+
       e.target.value = ''
     }
   }
