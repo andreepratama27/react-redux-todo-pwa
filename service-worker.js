@@ -36,7 +36,7 @@ self.addEventListener('install', function(event) {
 
               const urlsToCache = [
                 "/",
-                assets["main.js"]
+                assets["dist/bundle.js"]
               ]
               cache.addAll(urlsToCache)
               console.log('cached')
