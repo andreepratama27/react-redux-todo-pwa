@@ -1,12 +1,29 @@
 @import './_variable';
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@font-face {
+    font-family: openSans;
+    src: url('/dist/local/Open_Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: openSans-bold;
+    src: url('/dist/local/Open_Sans/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: openSans-semibold;
+    src: url('/dist/local/Open_Sans/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+    font-family: openSans-light;
+    src: url('/dist/local/Open_Sans/OpenSans-Light.ttf');
+}
 
 body {
     background-color: $color-dark;
     font-size: 14px;
-    font-family: 'Open sans', sans-serif;
+    font-family: openSans, sans-serif;
 }
 
 .title {

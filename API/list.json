@@ -1,0 +1,12 @@
+[
+  {
+    id: 0,
+    name: 'Makan nasi',
+    done: false
+  },
+  {
+    id: 1,
+    name: 'Pulang kerumah',
+    done: false
+  }
+]
