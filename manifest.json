@@ -1,6 +1,6 @@
 {
-  "short_name": "TodoList",
   "name": "TodoList PWA",
+  "short_name": "TodoList",
   "icons": [
     {
       "src":"./dist/icon.png",
