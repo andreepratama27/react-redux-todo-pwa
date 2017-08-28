@@ -9,7 +9,9 @@ var urlsToCache = [
   './dist/local/Open_Sans/OpenSans-Regular.ttf',
   './dist/local/Open_Sans/OpenSans-Bold.ttf',
   './dist/local/Open_Sans/OpenSans-Semibold.ttf',
-  './dist/local/Open_Sans/OpenSans-Light.ttf'
+  './dist/local/Open_Sans/OpenSans-Light.ttf',
+  './dist/local/Font-Awesome-4.7.0/css/font-awesome.min.css',
+  './dist/local/Font-Awesome-4.7.0/fonts/FontAwesome.otf'
 ];
 
 self.oninstall = function (e) {
