@@ -6,9 +6,11 @@ const List = ({ data, deleteData, taskDone }) => (
         {v.task}
       </div>
       <div className='option'>
-        <div className='delete' onClick={ (e) => deleteData(key) }>
-          &times;
-        </div>
+        {
+          !v.done
+            ? ''
+            : <div className='delete' onClick={ (e) => deleteData(key) }>&times;</div>
+        }
       </div>
     </li>
   ))}

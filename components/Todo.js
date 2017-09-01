@@ -32,6 +32,8 @@ const Todo = props => {
 
       <Filtering filter={ filterTodo } />
 
+      <div className='divider'></div>
+
       <List
         data={todos}
         deleteData={ deleteData }
