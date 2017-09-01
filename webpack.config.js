@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const validator = require('webpack-validator')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const extractTextPlugin = require('extract-text-webpack-plugin')
 
 /* Directory */
 const directory = path.resolve(__dirname, 'src/')
@@ -27,11 +27,6 @@ module.exports = validator({
         }
     },
 
-    // output: {
-    //     path: path.resolve(__dirname, 'dist'),
-    //     filename: 'bundle.js'
-    // },
-
     devServer: {
         inline: true,
         port: 3000
@@ -54,7 +49,7 @@ module.exports = validator({
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css!sass')
+                loader: extractTextPlugin.extract('css!sass')
             }
         ]
     },
@@ -64,6 +59,6 @@ module.exports = validator({
             'React': 'react',
             'ReactDOM': 'react-dom'
         }),
-        new ExtractTextPlugin('style.css')
+        new extractTextPlugin('style.css')
     ]
 })
