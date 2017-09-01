@@ -9,6 +9,8 @@ const directory = path.resolve(__dirname, 'src/')
 module.exports = validator({
 
     entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
         'babel-polyfill',
         path.resolve(__dirname, 'index.js')
     ],
@@ -25,14 +27,14 @@ module.exports = validator({
         }
     },
 
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
+    // output: {
+    //     path: path.resolve(__dirname, 'dist'),
+    //     filename: 'bundle.js'
+    // },
 
     devServer: {
         inline: true,
-        port: 2020
+        port: 3000
     },
 
     module: {

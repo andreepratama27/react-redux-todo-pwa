@@ -3,9 +3,14 @@ export const addTodo = data => ({
   task: data.task
 })
 
+export const filterTodo = filter => ({
+  type: 'FILTER_TODO',
+  filter
+})
+
 export const setDone = data => ({
   type: 'DONE',
-  id: data.id
+  data
 })
 
 export const delTask = data => ({

@@ -4,9 +4,6 @@ import { addTodo, delTask, setDone } from 'Actions/'
 
 const mapStateToProps = state => ({
   todos: state.todos
-  // todos: state.todos.filter(v  => {
-  //   return v.done === false
-  // })
 })
 
 const mapDispatchToProps = dispatch => ({

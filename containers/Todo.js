@@ -1,42 +1,38 @@
-import BoxInput from 'Component/BoxInput'
-import List from 'Component/List'
+import { connect } from 'react-redux'
+import { filterTodo, setDone } from 'Actions/'
+import Todo from 'Component/Todo'
 
-const Todo = (props) => {
+const filtering = (todos, filter) => {
+  if (filter != '') {
+    let data
 
-  const { todos, addTodo, setDone, delTask } = props
+    filter === 'all'
+      ? data = todos.filter(v => v.done === false)
+      : data = todos.filter(v => v.done === true)
 
-  const handleClick = (e) => {
-    if (e.keyCode === 13) {
-
-      const data = { task: e.target.value }
-
-      addTodo(data)
-
-      e.target.value = ''
-    }
+    return data
+  } else {
+    return todos
   }
-
-  const taskDone = id => {
-    setDone({ id })
-  }
-
-  const deleteData = id => {
-    delTask({ id })
-  }
-
-  return (
-    <div>
-
-      <BoxInput handleClick={ handleClick } />
-
-      <div className='divider'></div>
-
-      <List
-        data={todos}
-        deleteData={ deleteData }
-        taskDone={ taskDone } />
-    </div>
-  )
 }
 
-export default Todo
+const mapStateToProps = state => ({
+  todos: filtering(state.todos, state.visibilityFilters)
+})
+
+const mapDispatchToProps = dispatch => ({
+  filterTodo(data) {
+    dispatch(filterTodo(data))
+  },
+
+  setDone(data) {
+    dispatch(setDone(data))
+  }
+})
+
+const TodoContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Todo)
+
+export default TodoContainer

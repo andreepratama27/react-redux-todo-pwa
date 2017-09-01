@@ -1,4 +1,4 @@
-let nextId = 0
+let nextId = 0 
 
 const reducers = (state=[], action) => {
 
@@ -19,7 +19,7 @@ const reducers = (state=[], action) => {
 
     case 'DONE': {
       return state.map(v =>
-        (v.id === action.id)
+        (v.id === action.data.id)
           ? {...v, done: !v.done}
           : v
       )
