@@ -2,12 +2,11 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-/* Directory */
-const directory = path.resolve(__dirname, 'src/')
-
 module.exports = {
 
-    entry: path.resolve(__dirname, 'index.js'),
+    entry: [
+        path.resolve(__dirname, 'index.js')
+    ],
 
     resolve: {
         extensions: ['', '.js', '.jsx'],

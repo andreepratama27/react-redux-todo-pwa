@@ -3,9 +3,6 @@ const path = require('path')
 const validator = require('webpack-validator')
 const extractTextPlugin = require('extract-text-webpack-plugin')
 
-/* Directory */
-const directory = path.resolve(__dirname, 'src/')
-
 module.exports = validator({
 
     entry: [
