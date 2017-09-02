@@ -1,4 +1,5 @@
 import BoxInput from 'Component/BoxInput'
+import Divider from 'Component/Divider'
 import Filtering from 'Component/Filtering'
 import List from 'Component/List'
 
@@ -32,12 +33,18 @@ const Todo = props => {
 
       <Filtering filter={ filterTodo } />
 
-      <div className='divider'></div>
+      <Divider />
 
-      <List
-        data={todos}
-        deleteData={ deleteData }
-        taskDone={ taskDone } />
+      {
+        !todos.length
+          ? <h4 style={{ color: '#999', textAlign: 'center' }}>Task not found</h4>
+          :
+              <List
+                  data={todos}
+                  deleteData={ deleteData }
+                  taskDone={ taskDone } />
+      }
+
     </div>
   )
 }

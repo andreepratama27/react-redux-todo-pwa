@@ -1,6 +1,11 @@
 const BoxInput = ({ handleClick }) => (
   <div>
-    <input type='text' spellCheck="false" className='form-control input-box' onKeyUp={ handleClick } />
+      <input
+          type='text'
+          spellCheck="false"
+          className='form-control input-box'
+          maxLength='20'
+          onKeyUp={ handleClick } />
   </div>
 )
 
