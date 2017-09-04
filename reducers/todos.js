@@ -1,19 +1,25 @@
-let nextId = 0 
+let nextId = 0
 
-const reducers = (state=[], action) => {
+const initState = JSON.parse(localStorage.getItem('todo')) || []
+
+const reducers = (state=initState, action) => {
 
   switch(action.type) {
 
     case 'ADD': {
 
-      return [
-        ...state,
-        {
-          id: nextId++,
-          task: action.task,
-          done: false
-        }
-      ]
+	  let addData = [
+		...state,
+		{
+			id: nextId++,
+			task: action.task,
+			done: false
+		}
+	  ]
+
+	  localStorage.setItem('todo', JSON.stringify(addData))
+
+	  return addData
 
     }
 
@@ -26,10 +32,15 @@ const reducers = (state=[], action) => {
     }
 
     case 'DEL': {
-      return [
-        ...state.slice(0, action.id),
-        ...state.slice(action.id + 1)
-      ]
+
+	  const delData = [
+		...state.slice(0, action.id),
+		...state.slice(action.id + 1)
+	  ]
+
+	  localStorage.setItem('todo', JSON.stringify(delData))
+
+	  return delData
     }
 
     default: {
