@@ -1,4 +1,4 @@
-let nextId = 0 
+import { getTodoDB, addTodoItem } from 'Config/firebase'
 
 const reducers = (state=[], action) => {
 
@@ -33,7 +33,7 @@ const reducers = (state=[], action) => {
     }
 
     default: {
-      return state
+        return state
     }
   }
 }

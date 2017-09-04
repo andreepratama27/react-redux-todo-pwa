@@ -12,6 +12,7 @@ module.exports = {
             Actions: path.resolve(__dirname, 'actions/'),
             Component: path.resolve(__dirname, 'components/'),
             Container: path.resolve(__dirname, 'containers/'),
+            Config: path.resolve(__dirname, 'config/'),
             Lib: path.resolve(__dirname, 'lib/'),
             Reducer: path.resolve(__dirname, 'reducers/'),
             Style: path.resolve(__dirname, 'style')
