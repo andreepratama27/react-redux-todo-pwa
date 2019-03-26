@@ -1,24 +1,25 @@
-import { Component } from 'react'
-import Todo from 'Container/Todo'
-import style from 'Style/style.scss'
+import { Component } from "react";
+import Todo from "Container/Todo";
+import { Box, Container } from "gestalt";
+import style from "Style/style.scss";
+import "gestalt/dist/gestalt.css";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
-
     return (
-      <div className='container'>
-        <div className='row'>
-          <div className='todo-wrapper'>
+      <Box>
+        <Container>
+          <div className="todo-wrapper">
             <Todo {...this.props} />
           </div>
-        </div>
-      </div>
-    )
+        </Container>
+      </Box>
+    );
   }
 }
 
-export default App
+export default App;
